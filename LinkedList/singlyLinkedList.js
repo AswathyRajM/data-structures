@@ -61,13 +61,12 @@ class LinkedList {
     if (this.head == null) {
       console.log("List is empty!");
       return;
+    } else if (position < 0) {
+      console.log("Enter a valid index");
+      return;
     } else if (this.head.nextL == null) {
       this.head = null;
       this.tail = null;
-      return;
-    }
-    if (position < 0) {
-      console.log("Enter a valid index");
       return;
     }
 
@@ -84,10 +83,6 @@ class LinkedList {
         return;
       }
       it = it.nextL;
-      if (it == null) {
-        console.log("Enter a valid index");
-        return;
-      }
     }
     it.nextL = temp.nextL;
     if (it.nextL == null) this.tail = it;
